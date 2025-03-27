@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QuestionStreamReader.cs" />
     <Compile Include="storage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestStreamWrite.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

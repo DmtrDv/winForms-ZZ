@@ -1,13 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using mylib;
 
 namespace Testing
 {
     [TestClass]
-    public class UnitTest1
+    public class TQuestionStreamReader
     {
         [TestMethod]
-        public void TestMethod1()
+        public storage TestReadDisciplines()
         {
         }
     }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ListQueshions = new System.Windows.Forms.RichTextBox();
-            this.ListDisciplines = new System.Windows.Forms.ComboBox();
+            this.ListQueshions_RichTextBox = new System.Windows.Forms.RichTextBox();
+            this.ListDisciplines_comboBox = new System.Windows.Forms.ComboBox();
             this.EnteringNumber = new System.Windows.Forms.TextBox();
             this.Press = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,22 +37,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ListQueshions
+            // ListQueshions_RichTextBox
             // 
-            this.ListQueshions.Location = new System.Drawing.Point(12, 36);
-            this.ListQueshions.Name = "ListQueshions";
-            this.ListQueshions.Size = new System.Drawing.Size(443, 381);
-            this.ListQueshions.TabIndex = 0;
-            this.ListQueshions.Text = "";
+            this.ListQueshions_RichTextBox.Location = new System.Drawing.Point(12, 36);
+            this.ListQueshions_RichTextBox.Name = "ListQueshions_RichTextBox";
+            this.ListQueshions_RichTextBox.Size = new System.Drawing.Size(443, 381);
+            this.ListQueshions_RichTextBox.TabIndex = 0;
+            this.ListQueshions_RichTextBox.Text = "";
             // 
-            // ListDisciplines
+            // ListDisciplines_comboBox
             // 
-            this.ListDisciplines.BackColor = System.Drawing.SystemColors.Info;
-            this.ListDisciplines.FormattingEnabled = true;
-            this.ListDisciplines.Location = new System.Drawing.Point(480, 47);
-            this.ListDisciplines.Name = "ListDisciplines";
-            this.ListDisciplines.Size = new System.Drawing.Size(121, 21);
-            this.ListDisciplines.TabIndex = 1;
+            this.ListDisciplines_comboBox.BackColor = System.Drawing.SystemColors.Info;
+            this.ListDisciplines_comboBox.FormattingEnabled = true;
+            this.ListDisciplines_comboBox.Location = new System.Drawing.Point(480, 47);
+            this.ListDisciplines_comboBox.Name = "ListDisciplines_comboBox";
+            this.ListDisciplines_comboBox.Size = new System.Drawing.Size(121, 21);
+            this.ListDisciplines_comboBox.TabIndex = 1;
             // 
             // EnteringNumber
             // 
@@ -107,8 +107,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Press);
             this.Controls.Add(this.EnteringNumber);
-            this.Controls.Add(this.ListDisciplines);
-            this.Controls.Add(this.ListQueshions);
+            this.Controls.Add(this.ListDisciplines_comboBox);
+            this.Controls.Add(this.ListQueshions_RichTextBox);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -118,8 +118,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox ListQueshions;
-        private System.Windows.Forms.ComboBox ListDisciplines;
+        private System.Windows.Forms.RichTextBox ListQueshions_RichTextBox;
+        private System.Windows.Forms.ComboBox ListDisciplines_comboBox;
         private System.Windows.Forms.TextBox EnteringNumber;
         private System.Windows.Forms.Button Press;
         private System.Windows.Forms.Label label1;

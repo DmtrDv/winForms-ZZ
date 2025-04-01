@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace mylib
 {
-    class TestStreamWrite
+    public class TestStreamWrite
     {
 
     }

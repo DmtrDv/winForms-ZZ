@@ -25,7 +25,7 @@ namespace winForms_ZZ
 
         private void InitializeForm()
         {
-            // Заполнение ComboBox группами блюд
+            // Заполнение ComboBox дисциплинами
             ReaderDisciplines.ReadDisciplines(Path, AllDiscipline);
             foreach (var discipline in AllDiscipline.getDiscipline())
             {
@@ -35,10 +35,7 @@ namespace winForms_ZZ
             ListDisciplines_comboBox.SelectedIndexChanged += ListDisciplines_comboBox_SelectedIndexChanged;
         }
 
-        private void ListQueshions_RichTextBox_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
+        
 
         private void ListDisciplines_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -46,15 +43,18 @@ namespace winForms_ZZ
             ListQueshions_RichTextBox.Clear();
 
             // Проверка, что выбран элемент
+            //Если SelectedItem = null,то ничего не выбрано, и код не будет выполнен
             if (ListDisciplines_comboBox.SelectedItem != null)
-            {
+            {    
                 string selectedDiscipline = ListDisciplines_comboBox.SelectedItem.ToString();
+                // выгрузка вопросов
+                storage AllQuestions = new storage();
                 AllQuestions = ReaderQuestions.ReadListQuestions(selectedDiscipline, AllQuestions);
-
-                // Загрузка вопросов в RichTextBox
+                //проходит по вопросам и загружает их в RichTextBox
                 foreach (var question in AllQuestions.getListQuiestions())
                 {
-                    ListQueshions_RichTextBox.AppendText(question + Environment.NewLine);
+                     ListQueshions_RichTextBox.AppendText(question + "\n");
+                    //ListQueshions_RichTextBox.Text += question + "\n";
                 }
             }
         }

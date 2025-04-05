@@ -44,7 +44,7 @@
             this.ListQueshions_RichTextBox.Size = new System.Drawing.Size(443, 381);
             this.ListQueshions_RichTextBox.TabIndex = 0;
             this.ListQueshions_RichTextBox.Text = "";
-            this.ListQueshions_RichTextBox.TextChanged += new System.EventHandler(this.ListQueshions_RichTextBox_TextChanged);
+           
             // 
             // ListDisciplines_comboBox
             // 

@@ -44,6 +44,7 @@
             this.ListQueshions_RichTextBox.Size = new System.Drawing.Size(443, 381);
             this.ListQueshions_RichTextBox.TabIndex = 0;
             this.ListQueshions_RichTextBox.Text = "";
+            this.ListQueshions_RichTextBox.TextChanged += new System.EventHandler(this.ListQueshions_RichTextBox_TextChanged);
             // 
             // ListDisciplines_comboBox
             // 
@@ -53,6 +54,7 @@
             this.ListDisciplines_comboBox.Name = "ListDisciplines_comboBox";
             this.ListDisciplines_comboBox.Size = new System.Drawing.Size(121, 21);
             this.ListDisciplines_comboBox.TabIndex = 1;
+            this.ListDisciplines_comboBox.SelectedIndexChanged += new System.EventHandler(this.ListDisciplines_comboBox_SelectedIndexChanged);
             // 
             // EnteringNumber
             // 

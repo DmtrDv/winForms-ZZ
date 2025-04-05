@@ -22,7 +22,6 @@ namespace mylib
                     Discipline.AddDiscipline(EnumerationOfDisciplines[i]);
                 }
             }
-
             return Discipline;
         }
 

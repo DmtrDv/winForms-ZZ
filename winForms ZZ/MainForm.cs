@@ -1,5 +1,6 @@
 ﻿using mylib;
 using System;
+using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
@@ -37,7 +38,7 @@ namespace winForms_ZZ
             ListDisciplines_comboBox.SelectedIndexChanged += ListDisciplines_comboBox_SelectedIndexChanged;
         }
 
-        
+
 
         private void ListDisciplines_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -47,7 +48,7 @@ namespace winForms_ZZ
             // Проверка, что выбран элемент
             //Если SelectedItem = null,то ничего не выбрано, и код не будет выполнен
             if (ListDisciplines_comboBox.SelectedItem != null)
-            {    
+            {
                 string selectedDiscipline = ListDisciplines_comboBox.SelectedItem.ToString();
                 // выгрузка вопросов
                 storage AllQuestions = new storage();
@@ -66,43 +67,33 @@ namespace winForms_ZZ
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                // Получаем выбранный элемент
-                ListViewItem selectedItem = listView1.SelectedItems[0];
-
-                // Открываем диалоговое окно для редактирования текста
-                using (Form editForm = new Form())
-                {
-                    var textBox = new TextBox
-                    {
-                        Text = selectedItem.Text,
-                        Dock = DockStyle.Fill
-                    };
-                    var saveButton = new Button
-                    {
-                        Text = "Сохранить",
-                        Dock = DockStyle.Bottom
-                    };
-
-                    saveButton.Click += (s, args) =>
-                    {
-                        // Сохраняем измененный текст
-                        selectedItem.Text = textBox.Text;
-                        editForm.Close();
-                    };
-
-                    editForm.Controls.Add(textBox);
-                    editForm.Controls.Add(saveButton);
-                    editForm.ShowDialog();
-                }
+                // Получаем выбранный элемент и начинаем редактирование
+                listView1.LabelEdit = true;
+                listView1.SelectedItems[0].BeginEdit();
             }
             else
             {
                 MessageBox.Show("Пожалуйста, выберите вопрос для редактирования.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        // Обработчик события завершения редактирования
+        private void listView1_AfterLabelEdit(object sender, LabelEditEventArgs e)
+        {
+            if (e.Label != null) // Если редактирование не отменено
+            {
+                // Здесь можно добавить дополнительные проверки, если нужно
+                // Например, проверка на пустую строку
+                if (string.IsNullOrWhiteSpace(e.Label)) { e.CancelEdit = true; }
+            }
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }
-    
 
 
 
@@ -110,26 +101,31 @@ namespace winForms_ZZ
 
 
 
-    
 
 
 
 
 
-        // string IntroducedDiscipline = Console.ReadLine();
-
-        //Console.WriteLine("Вот все вопросы по дисциплине: \n");
-        //Console.WriteLine(String.Join("\n", ReaderQuestions.ReadListQuestions(IntroducedDiscipline, AllQuestions).getListQuiestions()));
-
-        //Console.WriteLine("Введите необходимые номера вопросов для тестов: ");
-        //  int numbersQuestions = Convert.ToInt32(Console.ReadLine());
 
 
-        //Console.WriteLine(numbersQuestions);
 
 
-        //Console.ReadKey();
 
-    
+
+// string IntroducedDiscipline = Console.ReadLine();
+
+//Console.WriteLine("Вот все вопросы по дисциплине: \n");
+//Console.WriteLine(String.Join("\n", ReaderQuestions.ReadListQuestions(IntroducedDiscipline, AllQuestions).getListQuiestions()));
+
+//Console.WriteLine("Введите необходимые номера вопросов для тестов: ");
+//  int numbersQuestions = Convert.ToInt32(Console.ReadLine());
+
+
+//Console.WriteLine(numbersQuestions);
+
+
+//Console.ReadKey();
+
+
 
 

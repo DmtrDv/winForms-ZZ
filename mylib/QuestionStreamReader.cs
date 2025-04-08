@@ -22,6 +22,7 @@ namespace mylib
                     Discipline.AddDiscipline(EnumerationOfDisciplines[i]);
                 }
             }
+
             return Discipline;
         }
 
@@ -31,6 +32,7 @@ namespace mylib
             using (StreamReader SR = new StreamReader(PathToListQuestion))
             {
                 string readable = Convert.ToString(SR.ReadToEnd());
+
                 string[] AlreadyReadStrings = readable.Split('\n');
                 string[] AlreadyRead = null;
                 for (int i = 0; i < AlreadyReadStrings.Length; i++)

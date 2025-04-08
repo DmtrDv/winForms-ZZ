@@ -13,11 +13,8 @@ namespace mylib
         List<string> ListQuiestions = new List<string>();
 
         List<string> QuestionsForTest = new List<string>();
-        public void AddDiscipline(string List)
-        {
-            Discipline.Add(List);
-        }
 
+        List<string> ListNecessaryQuestions = new List<string>();
         public List<string> getDiscipline()
         {
             return Discipline;
@@ -26,6 +23,14 @@ namespace mylib
         {
             return ListQuiestions;
         }
+        public List<string> getNecesseryQuestion()
+        {
+            return ListNecessaryQuestions;
+        }
+        public void AddDiscipline(string List)
+        {
+            Discipline.Add(List);
+        }
         public void AddQuestion(string List)
         {
             ListQuiestions.Add(List);
@@ -33,6 +38,10 @@ namespace mylib
         public void AddQuestionForTest(string List)
         {
             QuestionsForTest.Add(List);
+        }
+        public void AddNecessaryQuestion(string List)
+        {
+            ListNecessaryQuestions.Add(List);
         }
     }
 }
